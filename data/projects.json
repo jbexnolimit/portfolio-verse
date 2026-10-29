@@ -1,0 +1,57 @@
+[
+  {
+    "id": "hookrelay",
+    "title": "HookRelay",
+    "category": "Backend Engineering",
+    "description": "A webhook delivery and event processing platform.",
+    "overview": "A portfolio project exploring event-driven processing, webhook delivery, delivery tracking, and retry workflows.",
+    "technologies": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Kafka",
+      "Rust"
+    ],
+    "thumbnail": null,
+    "gallery": [],
+    "features": [
+      "Webhook event processing",
+      "Delivery status tracking",
+      "Retry workflow",
+      "Event-driven worker architecture"
+    ],
+    "links": {
+      "github": "https://github.com/jbexnolimit/hookrelay",
+      "demo": null
+    },
+    "featured": true,
+    "sortOrder": 1
+  },
+  {
+    "id": "orderrecon",
+    "title": "OrderRecon",
+    "category": "Backend Engineering",
+    "description": "An order and payment reconciliation API.",
+    "overview": "A Rust-based project for importing orders and payments, running reconciliation, and reporting discrepancies.",
+    "technologies": [
+      "Rust",
+      "Axum",
+      "MongoDB",
+      "REST API"
+    ],
+    "thumbnail": null,
+    "gallery": [],
+    "features": [
+      "Order and payment imports",
+      "Data validation",
+      "Reconciliation runs",
+      "Discrepancy reporting"
+    ],
+    "links": {
+      "github": "https://github.com/jbexnolimit/orderrecon",
+      "demo": null
+    },
+    "featured": true,
+    "sortOrder": 2
+  }
+]

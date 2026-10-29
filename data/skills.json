@@ -1,0 +1,49 @@
+[
+  {
+    "id": "backend",
+    "title": "Backend Development",
+    "skills": [
+      "Python",
+      "Django",
+      "FastAPI",
+      "Rust",
+      "Axum",
+      "REST APIs"
+    ],
+    "sortOrder": 1
+  },
+  {
+    "id": "frontend",
+    "title": "Frontend Development",
+    "skills": [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS"
+    ],
+    "sortOrder": 2
+  },
+  {
+    "id": "databases",
+    "title": "Databases & Messaging",
+    "skills": [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Apache Kafka"
+    ],
+    "sortOrder": 3
+  },
+  {
+    "id": "tools",
+    "title": "Tools & Infrastructure",
+    "skills": [
+      "Git",
+      "Docker",
+      "Linux",
+      "Postman"
+    ],
+    "sortOrder": 4
+  }
+]

@@ -1,0 +1,40 @@
+
+{
+  "name": "Your Name",
+  "title": "Software Engineer",
+  "headline": "Backend & Full-Stack Development",
+  "description": "I build and maintain web applications, backend systems, and practical software solutions.",
+  "location": "Philippines",
+  "avatar": null,
+  "resumeUrl": "/documents/resume.pdf",
+  "email": "your-email@example.com",
+  "about": "I'm a software engineer interested in building reliable backend systems and useful web applications. I enjoy learning new technologies, solving problems, and collaborating with others.",
+  "socials": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/jbexnolimit"
+    }
+  ],
+  "navigation": [
+    {
+      "label": "Projects",
+      "target": "projects"
+    },
+    {
+      "label": "Skills",
+      "target": "skills"
+    },
+    {
+      "label": "Experience",
+      "target": "experience"
+    },
+    {
+      "label": "About",
+      "target": "about"
+    },
+    {
+      "label": "Contact",
+      "target": "contact"
+    }
+  ]
+}

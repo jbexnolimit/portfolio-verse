@@ -1,0 +1,33 @@
+[
+  {
+    "id": "cloudstaff",
+    "company": "Cloudstaff",
+    "position": "Senior Software Engineer",
+    "location": "Cebu City, Philippines",
+    "startDate": "2025-06",
+    "endDate": "2026-03",
+    "description": "Worked on an insurance management system using Django and Next.js.",
+    "highlights": [
+      "Integrated with the NowCerts API.",
+      "Improved system workflows and reduced manual processes.",
+      "Contributed to backend and frontend development."
+    ],
+    "sortOrder": 1
+  },
+  {
+    "id": "cytech",
+    "company": "CyTech International",
+    "position": "Senior Web Developer",
+    "location": "Cagayan de Oro, Philippines",
+    "startDate": "2023-12",
+    "endDate": "2025-06",
+    "description": "Developed web applications for risk management, business continuity, and security compliance.",
+    "highlights": [
+      "Led development of risk management and business continuity systems.",
+      "Built a Business Impact Analysis web application.",
+      "Contributed to security and privacy compliance applications.",
+      "Worked on an event-processing and monitoring system using Kafka."
+    ],
+    "sortOrder": 2
+  }
+]
