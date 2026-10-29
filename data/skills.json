@@ -1,49 +1,51 @@
 [
   {
-    "id": "backend",
-    "title": "Backend Development",
-    "skills": [
-      "Python",
-      "Django",
-      "FastAPI",
-      "Rust",
-      "Axum",
-      "REST APIs"
-    ],
+    "id": "programming-languages",
+    "title": "Programming Languages",
+    "overview": "Languages used to build backend services, web applications, and application features.",
+    "items": ["Python", "Rust", "JavaScript", "PHP", "Java"],
     "sortOrder": 1
   },
   {
-    "id": "frontend",
-    "title": "Frontend Development",
-    "skills": [
-      "JavaScript",
-      "TypeScript",
-      "React",
-      "Next.js",
-      "Tailwind CSS"
-    ],
+    "id": "backend-and-apis",
+    "title": "Backend & API Development",
+    "overview": "Frameworks and API technologies used to build backend services and integrate external systems.",
+    "items": ["Django", "FastAPI", "Axum", "REST APIs", "API Integration"],
     "sortOrder": 2
   },
   {
-    "id": "databases",
-    "title": "Databases & Messaging",
-    "skills": [
-      "PostgreSQL",
-      "MongoDB",
-      "MySQL",
-      "Apache Kafka"
-    ],
+    "id": "frontend-development",
+    "title": "Frontend Development",
+    "overview": "Technologies used to build web interfaces and connect them with backend services.",
+    "items": ["React.js", "Next.js"],
     "sortOrder": 3
   },
   {
-    "id": "tools",
-    "title": "Tools & Infrastructure",
-    "skills": [
-      "Git",
-      "Docker",
-      "Linux",
-      "Postman"
-    ],
+    "id": "databases-and-search",
+    "title": "Databases & Search",
+    "overview": "Technologies used for data storage, database design, query optimization, and search.",
+    "items": ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Elasticsearch"],
     "sortOrder": 4
+  },
+  {
+    "id": "messaging-and-processing",
+    "title": "Messaging & Data Processing",
+    "overview": "Technologies and patterns for asynchronous workloads, data pipelines, and event-driven systems.",
+    "items": ["Apache Kafka", "ETL Pipelines", "Event-Driven Architecture", "Asynchronous Processing"],
+    "sortOrder": 5
+  },
+  {
+    "id": "tools-and-environment",
+    "title": "Tools & Environment",
+    "overview": "Tools used for development, testing, source control, containerization, and task scheduling.",
+    "items": ["Git", "Docker", "Linux", "Postman", "Cron", "Windows Task Scheduler"],
+    "sortOrder": 6
+  },
+  {
+    "id": "core-competencies",
+    "title": "Core Competencies",
+    "overview": "Engineering and collaboration practices used to build maintainable software and improve workflows.",
+    "items": ["Database Design", "Query Optimization", "Workflow Automation", "Debugging", "Agile/Scrum", "Team Collaboration"],
+    "sortOrder": 7
   }
 ]

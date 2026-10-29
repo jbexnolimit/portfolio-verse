@@ -1,0 +1,64 @@
+
+[
+  {
+    "id": "backend-development",
+    "title": "Backend Development",
+    "overview": "Development and maintenance of backend services that support reliable application workflows and business operations.",
+    "description": "Build and maintain backend functionality, implement business logic, and improve existing services with an emphasis on reliability and maintainability.",
+    "details": "Experience includes developing Django applications, building REST APIs, handling data validation, improving query performance, and supporting background processing.",
+    "technologies": [
+      "Python",
+      "Django",
+      "FastAPI",
+      "Rust",
+      "Axum",
+      "REST APIs"
+    ],
+    "sortOrder": 1
+  },
+  {
+    "id": "full-stack-development",
+    "title": "Full-Stack Web Development",
+    "overview": "Development of web application features across frontend interfaces and backend services.",
+    "description": "Create and maintain web application functionality that connects user interfaces with backend systems and business workflows.",
+    "details": "Experience includes working with React.js and Next.js on the frontend, integrating APIs, and contributing to Django-based applications.",
+    "technologies": [
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "Python",
+      "Django"
+    ],
+    "sortOrder": 2
+  },
+  {
+    "id": "system-integration",
+    "title": "API Integration & System Integration",
+    "overview": "Connecting applications and external services to support consistent data exchange and coordinated workflows.",
+    "description": "Integrate APIs and improve how systems communicate, exchange information, and synchronize data.",
+    "details": "Experience includes integrating the NowCerts API into an insurance management system and supporting data synchronization between applications.",
+    "technologies": [
+      "REST APIs",
+      "API Integration",
+      "Django",
+      "Python"
+    ],
+    "sortOrder": 3
+  },
+  {
+    "id": "automation-and-processing",
+    "title": "Workflow Automation & Data Processing",
+    "overview": "Reducing repetitive manual work and supporting efficient processing of application data and background tasks.",
+    "description": "Develop automation and data-processing workflows that help applications handle routine operations more consistently.",
+    "details": "Experience includes insurance workflow automation, query optimization, background processing, ETL pipelines, and event-driven systems.",
+    "technologies": [
+      "Python",
+      "Apache Kafka",
+      "ETL Pipelines",
+      "Asynchronous Processing",
+      "Cron",
+      "Windows Task Scheduler"
+    ],
+    "sortOrder": 4
+  }
+]

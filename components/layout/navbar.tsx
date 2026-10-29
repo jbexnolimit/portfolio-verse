@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { site } from "@/lib/portfolio";
+import { navigation, site } from "@/lib/portfolio";
 
 export default function Navbar() {
+  const contactEnabled = navigation.some(
+    (item) => item.id === "contact",
+  );
+
   return (
     <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#09090b]/80 backdrop-blur-xl">
       <nav
@@ -17,22 +21,24 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-5 sm:gap-7">
-          {site.navigation.map((item) => (
+          {navigation.map((item) => (
             <Link
-              key={item.target}
-              href={`#${item.target}`}
+              key={item.id}
+              href={`#${item.id}`}
               className="hidden text-sm text-zinc-400 transition hover:text-white sm:inline-flex"
             >
               {item.label}
             </Link>
           ))}
 
-          <Link
-            href="#contact"
-            className="rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-200 transition hover:border-violet-400/50 hover:text-white"
-          >
-            Contact
-          </Link>
+          {contactEnabled && (
+            <Link
+              href="#contact"
+              className="rounded-full border border-white/10 px-4 py-2 text-xs font-medium text-zinc-200 transition hover:border-violet-400/50 hover:text-white"
+            >
+              Contact
+            </Link>
+          )}
         </div>
       </nav>
     </header>

@@ -1,23 +1,28 @@
-import siteData from "@/data/site.json";
-import projectsData from "@/data/projects.json";
+import siteData from "@/config/site.json";
+import servicesData from "@/data/services.json";
 import skillsData from "@/data/skills.json";
 import experienceData from "@/data/experience.json";
 
 import type {
   Experience,
-  Project,
+  SectionConfig,
+  Service,
   SiteData,
   SkillCategory,
 } from "@/types/portfolio";
 
 export const site = siteData as SiteData;
 
-export const projects = (projectsData as Project[]).toSorted(
-  (a, b) => a.sortOrder - b.sortOrder,
+export const sections = (site.sections as SectionConfig[])
+  .filter((section) => section.enabled)
+  .toSorted((a, b) => a.sortOrder - b.sortOrder);
+
+export const navigation = sections.filter(
+  (section) => section.navigation,
 );
 
-export const featuredProjects = projects.filter(
-  (project) => project.featured,
+export const services = (servicesData as Service[]).toSorted(
+  (a, b) => a.sortOrder - b.sortOrder,
 );
 
 export const skillCategories = (

@@ -1,33 +1,53 @@
+
 [
   {
     "id": "cloudstaff",
     "company": "Cloudstaff",
-    "position": "Senior Software Engineer",
-    "location": "Cebu City, Philippines",
+    "position": "Software Engineer",
+    "location": "Cebu City, Cebu, Philippines",
     "startDate": "2025-06",
     "endDate": "2026-03",
-    "description": "Worked on an insurance management system using Django and Next.js.",
+    "overview": "Worked on an insurance management system using Django and Next.js, contributing to application development, backend services, and integrations with external systems.",
+    "description": "Contributed to the development and maintenance of an insurance management platform, with a focus on reliable application operations and reducing manual work through automation.",
     "highlights": [
-      "Integrated with the NowCerts API.",
-      "Improved system workflows and reduced manual processes.",
-      "Contributed to backend and frontend development."
+      "Developed and maintained features across a Django backend and Next.js frontend.",
+      "Automated insurance workflows to reduce manual processing.",
+      "Integrated the NowCerts API to support data exchange and synchronization between systems.",
+      "Improved application functionality to support reliable day-to-day operations."
     ],
     "sortOrder": 1
   },
   {
-    "id": "cytech",
+    "id": "cytech-international",
     "company": "CyTech International",
     "position": "Senior Web Developer",
-    "location": "Cagayan de Oro, Philippines",
+    "location": "Cagayan de Oro, Misamis Oriental, Philippines",
     "startDate": "2023-12",
     "endDate": "2025-06",
-    "description": "Developed web applications for risk management, business continuity, and security compliance.",
+    "overview": "Led full-stack development of risk management and business continuity applications, while contributing to case management, security monitoring, and backend performance improvements.",
+    "description": "Worked with business requirements and stakeholders to deliver web-based systems for risk assessment, business continuity planning, security and compliance workflows, and operational case management.",
     "highlights": [
-      "Led development of risk management and business continuity systems.",
-      "Built a Business Impact Analysis web application.",
-      "Contributed to security and privacy compliance applications.",
-      "Worked on an event-processing and monitoring system using Kafka."
+      "Led development of Risk Management and Business Continuity Management applications, including Business Impact Analysis workflows.",
+      "Developed features for risk assessment, case management, security monitoring, and operational planning.",
+      "Optimized database queries and background processing to improve API response times.",
+      "Built a customizable Kanban board for case management and collaborated with stakeholders to deliver client requirements."
     ],
     "sortOrder": 2
+  },
+  {
+    "id": "development-and-operations",
+    "company": "Development & Operations Inc.",
+    "position": "Junior Web Developer",
+    "location": "Cagayan de Oro, Misamis Oriental, Philippines",
+    "startDate": "2023-02",
+    "endDate": "2023-12",
+    "overview": "Contributed to the development and maintenance of a Security and Privacy Compliance Management web application.",
+    "description": "Built and maintained application features that supported compliance data management, reporting, and business requirements.",
+    "highlights": [
+      "Developed frontend and backend features for compliance data management.",
+      "Supported reporting workflows and improvements to application functionality.",
+      "Improved data organization to better support business requirements."
+    ],
+    "sortOrder": 3
   }
 ]

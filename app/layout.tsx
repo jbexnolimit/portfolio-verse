@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { site } from "@/lib/portfolio";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Software Engineer | Backend & Full-Stack Development",
-  description:
-    "Portfolio showcasing backend engineering, full-stack development, and software projects.",
+  title: `${site.name} | ${site.title}`,
+  description: site.description,
 };
 
 export default function RootLayout({
@@ -24,7 +24,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

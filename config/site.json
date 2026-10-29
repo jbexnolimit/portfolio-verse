@@ -1,0 +1,87 @@
+{
+  "name": "Bayani BJ Ubayubay",
+  "title": "Software Engineer",
+  "headline": "Backend Development & System Integration",
+  "description": "A portfolio showcasing professional experience, services, skills, and selected work.",
+  "location": "Cagayan de Oro, Misamis Oriental, Philippines",
+  "avatar": null,
+  "resumeUrl": "/documents/resume.pdf",
+  "email": "your-email@example.com",
+  "phone": "930 818 8560",
+  "hero": {
+    "eyebrow": "Software Engineer",
+    "headline": "Building reliable systems and practical solutions.",
+    "description": "I build and maintain web applications, backend systems, and integrations. I value teamwork, continuous learning, and creating reliable solutions to practical problems.",
+    "primaryAction": {
+      "label": "View my experience",
+      "target": "experience"
+    },
+    "secondaryAction": {
+      "label": "Get in touch",
+      "target": "contact"
+    }
+  },
+  "about": "I'm a software engineer with experience building and maintaining web applications and backend systems. My work has included API integrations, database optimization, workflow automation, and event-driven processing. I enjoy collaborating with teammates and stakeholders, learning new technologies, and developing reliable solutions that support real business needs.",
+  "socials": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/bayani-bj-ubayubay-2b1534247/"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/jbexnolimit"
+    }
+  ],
+  "sections": [
+    {
+      "id": "services",
+      "label": "Services",
+      "enabled": true,
+      "navigation": true,
+      "sortOrder": 1,
+      "eyebrow": "What I can help with",
+      "title": "Services",
+      "description": "Explore the services and practical solutions I can provide."
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "enabled": true,
+      "navigation": true,
+      "sortOrder": 2,
+      "eyebrow": "Skills and expertise",
+      "title": "Skills & Tools",
+      "description": "An overview of the skills, tools, and knowledge I use to approach projects and solve problems."
+    },
+    {
+      "id": "experience",
+      "label": "Experience",
+      "enabled": true,
+      "navigation": true,
+      "sortOrder": 3,
+      "eyebrow": "Career journey",
+      "title": "Experience",
+      "description": "A look at my professional journey, responsibilities, and contributions."
+    },
+    {
+      "id": "about",
+      "label": "About",
+      "enabled": true,
+      "navigation": true,
+      "sortOrder": 4,
+      "eyebrow": "A little about me",
+      "title": "About",
+      "description": "Learn more about my background, values, and approach."
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "enabled": true,
+      "navigation": true,
+      "sortOrder": 5,
+      "eyebrow": "Let's connect",
+      "title": "Get in touch",
+      "description": "Have a question, opportunity, or idea? Feel free to reach out."
+    }
+  ]
+}

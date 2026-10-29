@@ -8,6 +8,30 @@ export interface NavigationItem {
   target: string;
 }
 
+export interface HeroAction {
+  label: string;
+  target: string;
+}
+
+export interface HeroConfig {
+  eyebrow: string;
+  headline: string;
+  description: string;
+  primaryAction: HeroAction | null;
+  secondaryAction: HeroAction | null;
+}
+
+export interface SectionConfig {
+  id: string;
+  label: string;
+  enabled: boolean;
+  navigation: boolean;
+  sortOrder: number;
+  eyebrow: string;
+  title: string;
+  description: string;
+}
+
 export interface SiteData {
   name: string;
   title: string;
@@ -17,39 +41,28 @@ export interface SiteData {
   avatar: string | null;
   resumeUrl: string | null;
   email: string;
+  phone: string | null;
+  hero: HeroConfig;
   about: string;
   socials: SocialLink[];
-  navigation: NavigationItem[];
+  sections: SectionConfig[];
 }
 
-export interface ProjectImage {
-  src: string;
-  alt: string;
-  caption?: string;
-}
-
-export interface Project {
+export interface Service {
   id: string;
   title: string;
-  category: string;
-  description: string;
   overview: string;
+  description: string;
+  details: string;
   technologies: string[];
-  thumbnail: string | null;
-  gallery: ProjectImage[];
-  features: string[];
-  links: {
-    github: string | null;
-    demo: string | null;
-  };
-  featured: boolean;
   sortOrder: number;
 }
 
 export interface SkillCategory {
   id: string;
   title: string;
-  skills: string[];
+  overview: string;
+  items: string[];
   sortOrder: number;
 }
 
@@ -60,6 +73,7 @@ export interface Experience {
   location: string;
   startDate: string;
   endDate: string | null;
+  overview: string;
   description: string;
   highlights: string[];
   sortOrder: number;
