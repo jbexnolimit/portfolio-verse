@@ -17,10 +17,7 @@ export default function Contact() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="text-sm text-zinc-500">Email</p>
-              <a
-                href={`mailto:${site.email}`}
-                className="mt-2 inline-block break-all text-lg font-medium text-white transition hover:text-violet-300"
-              >
+              <a className="mt-2 inline-block break-all text-lg font-medium text-white transition hover:text-violet-300">
                 {site.email}
               </a>
 
@@ -29,7 +26,7 @@ export default function Contact() {
                   <p className="text-sm text-zinc-500">Phone</p>
                   <a
                     href={`tel:${site.phone.replace(/[^\d+]/g, "")}`}
-                    className="mt-2 inline-block text-zinc-200 transition hover:text-violet-300"
+                    className="contact-action contact-action-secondary mt-2 inline-block text-zinc-200 transition hover:text-violet-300"
                   >
                     {site.phone}
                   </a>
@@ -38,8 +35,10 @@ export default function Contact() {
             </div>
 
             <a
-              href={`mailto:${site.email}`}
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-zinc-100 px-6 py-3 text-sm font-medium text-zinc-950 transition hover:bg-violet-200"
+              href={`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(site.email)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-action hero-action-secondary inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:-translate-y-0.5 hover:border-violet-400/40 hover:text-white"
             >
               Send an email
               <span aria-hidden="true">↗</span>
@@ -54,7 +53,7 @@ export default function Contact() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-sm text-zinc-400 transition hover:text-white"
+                  className="hero-action hero-action-primary rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-400 transition hover:text-white"
                 >
                   {social.platform} ↗
                 </a>

@@ -54,6 +54,8 @@ export interface Service {
   overview: string;
   description: string;
   details: string;
+  thumbnail?: string | null;
+  gallery?: string[];
   technologies: string[];
   sortOrder: number;
 }

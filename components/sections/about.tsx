@@ -26,10 +26,12 @@ export default function About() {
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300 transition hover:border-violet-400/50 hover:text-white"
+                  className="hero-action hero-action-secondary rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-400 transition hover:text-white"
                 >
                   {social.platform}
-                  <span aria-hidden="true" className="ml-2">↗</span>
+                  <span aria-hidden="true" className="ml-2">
+                    ↗
+                  </span>
                 </a>
               ))}
             </div>

@@ -16,11 +16,7 @@ export default function Services() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {services.map((service, index) => (
-            <ServiceCard
-              key={service.id}
-              service={service}
-              index={index}
-            />
+            <ServiceCard key={service.id} service={service} index={index} />
           ))}
         </div>
       </div>

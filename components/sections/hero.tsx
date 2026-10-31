@@ -5,15 +5,27 @@ export default function Hero() {
   const { hero } = site;
 
   return (
-    <section className="relative flex min-h-[78vh] items-center py-24 sm:min-h-[82vh]">
-      <div className="container-shell">
+    <section
+      id="home"
+      className="relative flex min-h-[78vh] items-center overflow-hidden py-24 sm:min-h-[82vh]"
+    >
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-8rem] top-1/2 h-72 w-72 -translate-y-1/2 rounded-full border border-violet-400/[0.08] sm:right-[-4rem] sm:h-[28rem] sm:w-[28rem]"
+      >
+        <div className="absolute inset-8 rounded-full border border-violet-400/[0.08]" />
+        <div className="absolute inset-16 rounded-full border border-violet-400/[0.08]" />
+        <div className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 rounded-full bg-violet-300/70 shadow-[0_0_24px_rgba(167,139,250,0.5)]" />
+      </div>
+
+      <div className="container-shell relative">
         <div className="max-w-3xl">
           <div className="mb-8 flex items-center gap-3">
             <span className="h-px w-8 bg-violet-400" />
             <p className="eyebrow">{hero.eyebrow}</p>
           </div>
 
-          <h1 className="text-5xl font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl md:text-7xl">
+          <h1 className="text-gradient text-5xl font-semibold leading-[1.08] tracking-[-0.055em] sm:text-6xl md:text-7xl">
             {hero.headline}
           </h1>
 
@@ -25,7 +37,7 @@ export default function Hero() {
             {hero.primaryAction && (
               <Link
                 href={`#${hero.primaryAction.target}`}
-                className="inline-flex items-center gap-2 rounded-full bg-zinc-100 px-6 py-3 text-sm font-medium text-zinc-950 transition hover:bg-violet-200"
+                className="hero-action hero-action-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
                 {hero.primaryAction.label}
                 <span aria-hidden="true">↗</span>
@@ -35,10 +47,21 @@ export default function Hero() {
             {hero.secondaryAction && (
               <Link
                 href={`#${hero.secondaryAction.target}`}
-                className="inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 text-sm font-medium text-zinc-300 transition hover:border-white/25 hover:text-white"
+                className="hero-action hero-action-secondary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium"
               >
                 {hero.secondaryAction.label}
               </Link>
+            )}
+
+            {site.resumeUrl && (
+              <a
+                href={site.resumeUrl}
+                download
+                className="hero-action hero-action-secondary inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium"
+              >
+                Download Resume
+                <span aria-hidden="true">↓</span>
+              </a>
             )}
           </div>
 

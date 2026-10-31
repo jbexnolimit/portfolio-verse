@@ -14,7 +14,7 @@ export default function Footer() {
         </Link>
 
         <p className="text-sm text-zinc-500">
-           © {site.name}. All rights reserved.
+          © {site.name}. All rights reserved.
         </p>
 
         {site.socials.length > 0 && (

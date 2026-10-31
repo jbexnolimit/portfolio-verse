@@ -6,12 +6,12 @@
   "location": "Cagayan de Oro, Misamis Oriental, Philippines",
   "avatar": null,
   "resumeUrl": "/documents/resume.pdf",
-  "email": "your-email@example.com",
-  "phone": "930 818 8560",
+  "email": "jbeixautomatic@gmail.com",
+  "phone": "+63 930 818 8560",
   "hero": {
     "eyebrow": "Software Engineer",
     "headline": "Building reliable systems and practical solutions.",
-    "description": "I build and maintain web applications, backend systems, and integrations. I value teamwork, continuous learning, and creating reliable solutions to practical problems.",
+    "description": "I design and develop web applications, backend systems, and complex integrations. I am passionate about collaborating with others, embracing continuous learning, and delivering robust solutions that address real-world challenges.",
     "primaryAction": {
       "label": "View my experience",
       "target": "experience"
@@ -21,7 +21,7 @@
       "target": "contact"
     }
   },
-  "about": "I'm a software engineer with experience building and maintaining web applications and backend systems. My work has included API integrations, database optimization, workflow automation, and event-driven processing. I enjoy collaborating with teammates and stakeholders, learning new technologies, and developing reliable solutions that support real business needs.",
+  "about": "I am a software engineer specializing in building and maintaining both web applications and backend systems. My experience spans API integrations, database optimization, workflow automation, and event-driven processing. I thrive in collaborative environments, enjoy learning emerging technologies, and am dedicated to delivering robust solutions that drive real business value.",
   "socials": [
     {
       "platform": "LinkedIn",

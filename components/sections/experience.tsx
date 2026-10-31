@@ -50,9 +50,7 @@ export default function Experience() {
                 </p>
               </div>
 
-              <p className="mt-5 leading-7 text-zinc-300">
-                {item.overview}
-              </p>
+              <p className="mt-5 leading-7 text-zinc-300">{item.overview}</p>
 
               {item.description && (
                 <p className="mt-3 text-sm leading-6 text-zinc-400">

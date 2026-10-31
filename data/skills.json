@@ -31,21 +31,40 @@
     "id": "messaging-and-processing",
     "title": "Messaging & Data Processing",
     "overview": "Technologies and patterns for asynchronous workloads, data pipelines, and event-driven systems.",
-    "items": ["Apache Kafka", "ETL Pipelines", "Event-Driven Architecture", "Asynchronous Processing"],
+    "items": [
+      "Apache Kafka",
+      "ETL Pipelines",
+      "Event-Driven Architecture",
+      "Asynchronous Processing"
+    ],
     "sortOrder": 5
   },
   {
     "id": "tools-and-environment",
     "title": "Tools & Environment",
     "overview": "Tools used for development, testing, source control, containerization, and task scheduling.",
-    "items": ["Git", "Docker", "Linux", "Postman", "Cron", "Windows Task Scheduler"],
+    "items": [
+      "Git",
+      "Docker",
+      "Linux",
+      "Postman",
+      "Cron",
+      "Windows Task Scheduler"
+    ],
     "sortOrder": 6
   },
   {
     "id": "core-competencies",
     "title": "Core Competencies",
     "overview": "Engineering and collaboration practices used to build maintainable software and improve workflows.",
-    "items": ["Database Design", "Query Optimization", "Workflow Automation", "Debugging", "Agile/Scrum", "Team Collaboration"],
+    "items": [
+      "Database Design",
+      "Query Optimization",
+      "Workflow Automation",
+      "Debugging",
+      "Agile/Scrum",
+      "Team Collaboration"
+    ],
     "sortOrder": 7
   }
 ]

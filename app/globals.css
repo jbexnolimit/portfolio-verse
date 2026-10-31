@@ -1,17 +1,90 @@
 @import "tailwindcss";
 
+/* =========================================================
+   Theme variables
+   ========================================================= */
+
+/* =========================================================
+   Theme variables
+   ========================================================= */
+
 :root {
   color-scheme: dark;
+
+  /* Base colors */
   --background: #09090b;
   --surface: #111114;
-  --surface-hover: #17171c;
+  --surface-hover: #1b1b21;
+
+  /* Text */
   --foreground: #f4f4f5;
   --muted: #a1a1aa;
   --subtle: #71717a;
+
+  /* Borders and accents */
   --border: rgba(255, 255, 255, 0.09);
   --accent: #a78bfa;
   --accent-strong: #8b5cf6;
+  --selection: rgba(167, 139, 250, 0.3);
+
+  /* Cards and glass surfaces */
+  --card-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.012)
+  );
+  --glass-bg: rgba(255, 255, 255, 0.035);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --glow: rgba(139, 92, 246, 0.14);
+
+  /* Modal */
+  --modal-bg: rgba(24, 24, 30, 0.62);
+  --modal-overlay: rgba(0, 0, 0, 0.35);
+  --control-bg: rgba(255, 255, 255, 0.06);
+  --gallery-bg: rgba(255, 255, 255, 0.025);
 }
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Base colors */
+  --background: #faf9fc;
+  --surface: rgba(255, 255, 255, 0.45);
+  --surface-hover: rgba(245, 240, 255, 0.55);
+
+  /* Text */
+  --foreground: #211a2c;
+  --muted: #494255;
+  --subtle: #625a70;
+
+  /* Borders and accents */
+  --border: rgba(109, 40, 217, 0.16);
+  --accent: #7c3aed;
+  --accent-strong: #6d28d9;
+  --selection: rgba(139, 92, 246, 0.2);
+
+  /* Cards and glass surfaces */
+  --card-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(235, 228, 250, 0.08)
+  );
+  --glass-bg: rgba(235, 228, 250, 0.13);
+  --glass-border: rgba(109, 40, 217, 0.18);
+  --glass-shadow: 0 12px 36px rgba(57, 35, 88, 0.055);
+  --glow: rgba(139, 92, 246, 0.13);
+
+  /* Modal */
+  --modal-bg: rgba(250, 248, 255, 0.65);
+  --modal-overlay: rgba(45, 31, 65, 0.12);
+  --control-bg: rgba(255, 255, 255, 0.35);
+  --gallery-bg: rgba(232, 224, 247, 0.12);
+}
+
+/* =========================================================
+   Tailwind theme integration
+   ========================================================= */
 
 @theme inline {
   --color-background: var(--background);
@@ -19,6 +92,10 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+/* =========================================================
+   Base styles
+   ========================================================= */
 
 * {
   box-sizing: border-box;
@@ -32,11 +109,15 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background: var(--background);
+  overflow-x: clip;
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
   font-family: var(--font-geist-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
 }
 
 body::before {
@@ -44,18 +125,35 @@ body::before {
   inset: 0;
   z-index: -1;
   background:
+    radial-gradient(ellipse at 50% -10%, var(--glow), transparent 50%),
     radial-gradient(
-      ellipse at 50% 0%,
-      rgba(139, 92, 246, 0.11),
-      transparent 42%
+      ellipse at 100% 35%,
+      rgba(59, 130, 246, 0.045),
+      transparent 38%
     ),
-    radial-gradient(
-      ellipse at 100% 45%,
-      rgba(59, 130, 246, 0.035),
-      transparent 35%
-    );
+    radial-gradient(ellipse at 0% 75%, var(--glow), transparent 35%);
   content: "";
   pointer-events: none;
+}
+
+:root[data-theme="light"] body {
+  background-image:
+    radial-gradient(
+      ellipse at 12% 20%,
+      rgba(196, 181, 253, 0.24),
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse at 88% 48%,
+      rgba(147, 197, 253, 0.19),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 45% 90%,
+      rgba(221, 214, 254, 0.2),
+      transparent 42%
+    );
+  background-attachment: fixed;
 }
 
 a {
@@ -72,25 +170,34 @@ button {
   font: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 ::selection {
-  background: rgba(167, 139, 250, 0.3);
-  color: #ffffff;
+  background: var(--selection);
+  color: var(--foreground);
 }
 
 .container-shell {
-  width: min(100% - 2.5rem, 1100px);
+  width: min(100% - 3rem, 1100px);
   margin-inline: auto;
 }
 
 .section-spacing {
-  padding-block: 6rem;
+  padding-block: clamp(2rem, 4vw, 3rem);
+  scroll-margin-top: 5rem;
 }
 
 .eyebrow {
   color: var(--accent);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
   text-transform: uppercase;
 }
 
@@ -98,28 +205,249 @@ button {
   color: var(--muted);
 }
 
+/* =========================================================
+   Glass cards
+   ========================================================= */
+
 .surface-card {
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  background: rgba(17, 17, 20, 0.72);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  border-radius: 1.25rem;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(24px) saturate(145%);
+  backdrop-filter: blur(24px) saturate(145%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025),
+    var(--glass-shadow);
   transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    transform 180ms ease;
+    border-color 240ms ease,
+    background 240ms ease,
+    box-shadow 240ms ease,
+    transform 240ms ease;
+}
+
+.surface-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.025) 28%,
+    transparent 52%,
+    rgba(167, 139, 250, 0.045) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.surface-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.1),
+    transparent 25%,
+    transparent 75%,
+    rgba(167, 139, 250, 0.07)
+  );
+  content: "";
+  opacity: 0.45;
+  pointer-events: none;
 }
 
 .surface-card:hover {
-  border-color: rgba(167, 139, 250, 0.28);
-  background: var(--surface-hover);
+  border-color: rgba(196, 181, 253, 0.4);
+  background: rgba(167, 139, 250, 0.065);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 20px 55px rgba(0, 0, 0, 0.2),
+    0 0 30px rgba(139, 92, 246, 0.09);
+}
+
+:root[data-theme="light"] .surface-card::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.06) 35%,
+    transparent 58%,
+    rgba(196, 181, 253, 0.09) 100%
+  );
+}
+
+:root[data-theme="light"] .surface-card::after {
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.38),
+    transparent 30%,
+    transparent 75%,
+    rgba(167, 139, 250, 0.09)
+  );
+  opacity: 0.55;
+}
+
+:root[data-theme="light"] .surface-card:hover {
+  border-color: rgba(109, 40, 217, 0.34);
+  background: rgba(235, 228, 250, 0.23);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 18px 44px rgba(57, 35, 88, 0.1),
+    0 0 26px rgba(139, 92, 246, 0.075);
+}
+
+/* =========================================================
+   Theme-aware text
+   ========================================================= */
+
+/*
+  Fix titles and company names that currently use text-white.
+  This rule is limited to light mode.
+*/
+:root[data-theme="light"] .text-white {
+  color: var(--foreground);
+}
+
+:root[data-theme="light"] .text-zinc-100,
+:root[data-theme="light"] .text-zinc-200 {
+  color: var(--foreground);
+}
+
+:root[data-theme="light"] .text-zinc-300 {
+  color: #373044;
+}
+
+:root[data-theme="light"] .text-zinc-400 {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .text-zinc-500 {
+  color: var(--subtle);
+}
+
+:root[data-theme="light"] .text-zinc-600 {
+  color: #756d83;
+}
+
+:root[data-theme="light"] .text-zinc-700 {
+  color: #81798e;
+}
+
+:root[data-theme="light"] .border-white\/10,
+:root[data-theme="light"] .border-white\/\[0\.08\],
+:root[data-theme="light"] .border-white\/\[0\.06\] {
+  border-color: var(--border);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    110deg,
+    var(--foreground) 20%,
+    var(--accent) 70%,
+    var(--accent-strong)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* =========================================================
+   Transparent navbar
+   ========================================================= */
+
+.glass-navbar {
+  border-bottom: 1px solid var(--border);
+  background: rgba(9, 9, 11, 0.48);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
+  backdrop-filter: blur(18px) saturate(145%);
+  transition:
+    background 220ms ease,
+    border-color 220ms ease;
+}
+
+:root[data-theme="light"] .glass-navbar {
+  background: rgba(250, 249, 252, 0.38);
+}
+
+/* =========================================================
+   Theme-aware modal
+   ========================================================= */
+
+.service-modal-overlay {
+  background: var(--modal-overlay);
+  -webkit-backdrop-filter: blur(3px) saturate(110%);
+  backdrop-filter: blur(3px) saturate(110%);
+}
+
+.surface-modal {
+  color: var(--foreground);
+  border: 1px solid var(--glass-border);
+  background: var(--modal-bg);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  backdrop-filter: blur(12px) saturate(120%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 16px 48px rgba(0, 0, 0, 0.14);
+}
+
+.service-modal-icon-button {
+  color: var(--foreground);
+  border: 1px solid var(--border);
+  background: var(--control-bg);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.service-modal-icon-button:hover {
+  border-color: var(--accent);
+  background: rgba(139, 92, 246, 0.12);
+  color: var(--accent);
+}
+
+.service-modal-gallery {
+  border: 1px solid var(--border);
+  background: var(--gallery-bg);
+}
+
+:root[data-theme="light"] .surface-modal {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 16px 48px rgba(49, 31, 77, 0.08);
+}
+
+/* =========================================================
+   Theme toggle
+   ========================================================= */
+
+.theme-toggle-icon::before {
+  content: "☀";
+}
+
+:root[data-theme="light"] .theme-toggle-icon::before {
+  content: "☾";
+}
+
+/* =========================================================
+   Responsive and accessibility
+   ========================================================= */
+
+@media (hover: hover) {
+  .surface-card:hover {
+    transform: translateY(-2px);
+  }
 }
 
 @media (max-width: 640px) {
   .container-shell {
     width: min(100% - 2rem, 1100px);
-  }
-
-  .section-spacing {
-    padding-block: 4rem;
   }
 }
 
@@ -132,4 +460,239 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* =========================================================
+   Theme-aware navbar hover effects
+   ========================================================= */
+
+.glass-navbar a {
+  color: var(--muted);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.glass-navbar a:hover {
+  color: var(--accent);
+}
+
+/* Optional pill-style hover effect for navigation links */
+.glass-navbar nav a {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.glass-navbar nav a:hover {
+  background: var(--glow);
+}
+
+/* Active or keyboard-focused links */
+.glass-navbar nav a:focus-visible {
+  color: var(--accent);
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .glass-navbar a {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Theme toggle hover effects
+   ========================================================= */
+
+.theme-toggle {
+  color: var(--muted);
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.theme-toggle:hover {
+  color: var(--accent);
+  background: var(--glow);
+  border-color: var(--glass-border);
+  box-shadow: 0 0 16px var(--glow);
+  transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: none;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle {
+    transition: none;
+  }
+}
+
+/* =========================================================
+   Hero action button hover effects
+   ========================================================= */
+
+.hero-action {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow);
+}
+
+.hero-action:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+.hero-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.hero-action-primary:hover {
+  filter: brightness(1.08);
+}
+
+.hero-action-secondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--glow);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-action {
+    transition: none;
+  }
+
+  .hero-action:hover,
+  .hero-action:active {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   Consistent theme-aware action buttons
+   ========================================================= */
+
+.hero-action {
+  border: 1px solid var(--border);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-action-primary {
+  color: var(--foreground);
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+}
+
+
+.hero-action:hover {
+  color: var(--accent);
+  background: var(--glow);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px var(--glow);
+  transform: translateY(-2px);
+}
+
+.hero-action:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+.hero-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-action {
+    transition: none;
+  }
+
+  .hero-action:hover,
+  .hero-action:active {
+    transform: none;
+  }
+}
+
+
+.contact-action {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.contact-action-primary {
+  color: var(--foreground);
+}
+
+.contact-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--glow);
+}
+
+.contact-action:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-action {
+    transition: none;
+  }
+
+  .contact-action:hover,
+  .contact-action:active {
+    transform: none;
+  }
+}
+
+
+.contact-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.contact-action-primary:hover {
+  filter: brightness(1.08);
+}
+
+.contact-action-secondary:hover {
+  color: var(--accent);
+  background: var(--glow);
+}
+
+
+.contact-action-secondary:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--glow);
 }

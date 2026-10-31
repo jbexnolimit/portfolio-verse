@@ -26,9 +26,7 @@ export default function Home() {
 
         {sections.map((section) => {
           const Component =
-            sectionComponents[
-              section.id as keyof typeof sectionComponents
-            ];
+            sectionComponents[section.id as keyof typeof sectionComponents];
 
           if (!Component) {
             return null;
