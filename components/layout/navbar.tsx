@@ -1,14 +1,12 @@
-
 "use client";
 
 import Link from "next/link";
 import {
   PackageCheck,
-  User,
+  Layers,
   BriefcaseBusiness,
-  Mail,
-  UserCog,
-  FolderKanban,
+  Send,
+  ContactRound,
   type LucideIcon,
 } from "lucide-react";
 import { navigation, site } from "@/lib/portfolio";
@@ -16,15 +14,22 @@ import ThemeToggle from "@/components/ui/theme-toggle";
 
 const navigationIcons: Record<string, LucideIcon> = {
   services: PackageCheck,
-  about: User,
-  skills: UserCog,
+  about: ContactRound,
+  skills: Layers,
   experience: BriefcaseBusiness,
-  projects: FolderKanban,
-  contact: Mail,
+  contact: Send,
 };
 
+function getInitials(name: string): string {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+
+  if (parts.length === 0) return "";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+
+  return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+}
+
 export default function Navbar() {
-  const contactEnabled = navigation.some((item) => item.id === "contact");
 
   return (
     <header className="glass-navbar sticky top-0 z-40 w-full">
@@ -33,13 +38,16 @@ export default function Navbar() {
         className="container-shell flex min-h-16 w-full min-w-0 items-center justify-between gap-2 py-3 sm:gap-4"
       >
         <Link
-          href="#home"
-          className="min-w-0 shrink text-sm font-semibold tracking-tight text-[var(--foreground)]"
+          href="#services"
+          aria-label={site.name}
+          title={site.name}
+          className="shrink-0 text-sm font-semibold tracking-tight text-[var(--foreground)]"
         >
-          <span className="block truncate">{site.name}</span>
+          <span className="md:hidden">{getInitials(site.name)}</span>
+          <span className="hidden md:inline">{site.name}</span>
         </Link>
 
-        <div className="flex min-w-0 shrink-0 items-center gap-0.5 sm:gap-1 md:gap-5">
+        <div className="flex min-w-0 shrink-0 items-center gap-0.5 sm:gap-2 md:gap-5">
           {navigation.map((item) => {
             const Icon = navigationIcons[item.id];
 
@@ -67,24 +75,6 @@ export default function Navbar() {
               </Link>
             );
           })}
-
-          {!contactEnabled && (
-            <a
-              href={`mailto:${site.email}`}
-              aria-label="Contact"
-              title="Contact"
-              className="navbar-link flex shrink-0 items-center justify-center rounded-lg p-2 text-xs sm:px-2 md:py-2 md:text-sm"
-            >
-              <span className="hidden md:inline">Contact</span>
-              <Mail
-                aria-hidden="true"
-                className="navbar-link-icon md:hidden"
-                size={18}
-                strokeWidth={1.8}
-              />
-            </a>
-          )}
-
           <ThemeToggle />
         </div>
       </nav>

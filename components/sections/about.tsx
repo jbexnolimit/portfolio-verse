@@ -18,7 +18,7 @@ export default function About() {
             {site.about}
           </p>
 
-          {site.socials.length > 0 && (
+          {/* {site.socials.length > 0 && (
             <div className="mt-8 flex flex-wrap gap-3">
               {site.socials.map((social) => (
                 <a
@@ -35,7 +35,7 @@ export default function About() {
                 </a>
               ))}
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </section>

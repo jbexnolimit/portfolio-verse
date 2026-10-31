@@ -17,8 +17,8 @@
     "sortOrder": 1
   },
   {
-    "id": "cytech-international",
-    "company": "CyTech International",
+    "id": "cytech-development-and-operations",
+    "company": "CyTech Development & Operations Inc.",
     "position": "Senior Web Developer",
     "location": "Cagayan de Oro, Misamis Oriental, Philippines",
     "startDate": "2023-12",
@@ -34,9 +34,9 @@
     "sortOrder": 2
   },
   {
-    "id": "development-and-operations",
-    "company": "Development & Operations Inc.",
-    "position": "Junior Web Developer",
+    "id": "cytech-development-and-operations-01",
+    "company": "CyTech Development & Operations Inc.",
+    "position": "Web Developer",
     "location": "Cagayan de Oro, Misamis Oriental, Philippines",
     "startDate": "2023-02",
     "endDate": "2023-12",
